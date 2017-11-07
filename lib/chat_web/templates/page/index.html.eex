@@ -1,0 +1,10 @@
+<div id="main-panel">
+  <div id="left-panel">
+  </div>
+  <div id="center-panel">
+    <div id="messages"></div>
+    <input id="message-input" type="text"></input>
+  </div>
+  <div id="right-panel">
+  </div>
+</div>

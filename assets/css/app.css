@@ -1,0 +1,47 @@
+#main-panel {
+    margin: 0 auto;
+    width: 80%;
+    height: 800px;
+}
+
+#left-panel {
+    height: 100%;
+    width: 19%;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align:top;
+}
+
+#center-panel {
+    height: 100%;
+    width: 60%;
+    display: inline-block;
+    vertical-align:top;
+}
+
+#right-panel {
+    height: 100%;
+    width: 19%;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align:top;
+}
+
+#messages {
+    height: calc(100% - 35px);
+    border: 1px solid black;
+    margin-bottom: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    list-style: none;
+}
+
+#messages li {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+#message-input {
+    height: 30px;
+    width: 100%;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title></title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <div id="content">
+        <%= render @view_module, @view_template, assigns %>
+    </div>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
