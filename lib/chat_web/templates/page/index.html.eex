@@ -13,7 +13,6 @@
     <div id="members"></div>
   </div>
 </div>
-<div id="name-dialog">
-  <label>Name:</label>
-  <input id ="name-input" type="text"></input>
+<div id="name-dialog" title="Name">
+  <input id ="name-input" type="text" style="width: 100%;"></input>
 </div>
