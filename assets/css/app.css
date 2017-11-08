@@ -1,3 +1,7 @@
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}
+
 #main-panel {
     margin: 0 auto;
     width: 80%;
@@ -7,24 +11,25 @@
 #left-panel {
     height: 100%;
     width: 19%;
-    border: 1px solid black;
+    padding: 5px;
     display: inline-block;
-    vertical-align:top;
+    vertical-align: top;
 }
 
 #center-panel {
     height: 100%;
     width: 60%;
+    padding: 5px;
     display: inline-block;
-    vertical-align:top;
+    vertical-align: top;
 }
 
 #right-panel {
     height: 100%;
     width: 19%;
-    border: 1px solid black;
+    padding: 5px;
     display: inline-block;
-    vertical-align:top;
+    vertical-align: top;
 }
 
 #messages {
@@ -44,4 +49,32 @@
 #message-input {
     height: 30px;
     width: 100%;
+}
+
+#rooms {
+    height: calc(100% - 35px);
+    border: 1px solid black;
+    margin-bottom: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    list-style: none;
+}
+
+#rooms li {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+#members {
+    height: calc(100% - 35px);
+    border: 1px solid black;
+    margin-bottom: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    list-style: none;
+}
+
+#members li {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
 }
