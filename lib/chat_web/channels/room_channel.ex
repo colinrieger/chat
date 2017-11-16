@@ -7,8 +7,9 @@ defmodule ChatWeb.RoomChannel do
     {:ok, socket}
   end
 
-  def join("room:" <> _private_room_id, _params, _socket) do
-    {:error, %{reason: "unauthorized"}}
+  def join("room:" <> _private_room_id, _params, socket) do
+    send(self(), :after_join)
+    {:ok, socket}
   end
 
   def handle_info(:after_join, socket) do

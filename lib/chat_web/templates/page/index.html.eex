@@ -2,11 +2,14 @@
   <div id="left-panel">
     <h4>Rooms</h4>
     <div id="rooms"></div>
+    <div>
+      <input id="room-input" type="text" class="text-input" placeholder="Channel name"></input><input id="join-button" type="button" class="button-input" value="Join">
+    </div>
   </div>
   <div id="center-panel">
     <h4>Chat</h4>
     <div id="messages"></div>
-    <input id="message-input" type="text" placeholder="Type here to chat!"></input>
+    <div id="message-inputs"></div>
   </div>
   <div id="right-panel">
     <h4>Members</h4>
@@ -14,5 +17,5 @@
   </div>
 </div>
 <div id="name-dialog" title="Name">
-  <input id ="name-input" type="text" style="width: 100%;"></input>
+  <input id="name-input" type="text" style="width: 100%;"></input>
 </div>
