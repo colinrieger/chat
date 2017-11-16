@@ -86,8 +86,8 @@ function sendMessage(channel, roomId)
 
 function setRoomActive(roomItem)
 {
-  //$(this).parent().addClass("current");
-  //$(this).parent().siblings().removeClass("current");
+  $(roomItem).addClass("current");
+  $(roomItem).siblings().removeClass("current");
   var active = $(roomItem).find('a').attr("href");
   $(".room-display").css("display", "none");
   $(`${active}-messages`).show();

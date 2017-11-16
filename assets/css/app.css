@@ -73,8 +73,21 @@
 }
 
 #rooms li {
-    padding: 5px;
+    padding: 10px;
     border-bottom: 1px solid #ccc;
+}
+
+#rooms li a {
+    color: #000;
+    text-decoration: none;
+}
+
+#rooms li.current {
+    background-color: #2e7da3;
+}
+
+#rooms .current a {
+    color: #fff;
 }
 
 #members {
