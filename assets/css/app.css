@@ -36,7 +36,7 @@
 
 #left-panel {
     height: 100%;
-    width: 19%;
+    width: 20%;
     padding: 4px;
     display: inline-block;
     vertical-align: top;
@@ -52,16 +52,16 @@
 
 #right-panel {
     height: 100%;
-    width: 19%;
+    width: 20%;
     padding: 4px;
     display: inline-block;
     vertical-align: top;
 }
 
 #messages {
-    height: calc(100% - 35px);
+    height: calc(100% - 34px);
     border: 1px solid black;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     overflow-x: hidden;
     overflow-y: auto;
     list-style: none;
@@ -73,9 +73,9 @@
 }
 
 #rooms {
-    height: calc(100% - 35px);
+    height: calc(100% - 34px);
     border: 1px solid black;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     overflow-x: hidden;
     overflow-y: auto;
     list-style: none;
@@ -100,9 +100,9 @@
 }
 
 #members {
-    height: calc(100% - 35px);
+    height: calc(100% - 34px);
     border: 1px solid black;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     overflow-x: hidden;
     overflow-y: auto;
     list-style: none;
