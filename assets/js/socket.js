@@ -45,7 +45,7 @@ function joinChannel(room)
     .receive("error", resp => { alert("Failed to join " + roomId); })
     .receive("ok", resp => {
         let roomItem = document.createElement("li");
-        roomItem.innerHTML = `<a href='#${roomId}'>${roomId}</a>`;
+        roomItem.innerHTML = `<a href='#${roomId}'>${roomId}</a><input id='${roomId}-leave-button' type='button' class='leave-button' value='X'>`;
         roomItem.onclick = function (event) {
           event.preventDefault();
           setRoomActive(this);
@@ -56,7 +56,7 @@ function joinChannel(room)
         messages.append("<div id='" + roomId + "-messages' class='room-display'></div>");
         members.append("<div id='" + roomId + "-members' class='room-display'></div>");
         messageInputs.append("<div>" +
-          "<input id='" + roomId + "-message-input' type='text' class='room-display text-input' placeholder='Type here to chat!'></input>" +
+          "<input id='" + roomId + "-message-input' type='text' class='room-display text-input' placeholder='Type here to chat!'>" +
           "<input id='" + roomId + "-send-button' type='button' class='room-display button-input' value='Send'>" +
           "</div>"
         );
@@ -68,6 +68,20 @@ function joinChannel(room)
 
         $(`#${roomId}-send-button`).click(function() {
           sendMessage(channel, roomId);
+        });
+        
+        $(`#${roomId}-leave-button`).click(function(event) {
+          event.stopPropagation();
+          channel.leave()
+            .receive("ok", resp => {
+              roomItem.remove();
+              $(`#${roomId}-messages`).remove();
+              $(`#${roomId}-members`).remove();
+              $(`#${roomId}-message-input`).remove();
+              $(`#${roomId}-send-button`).remove();
+              if (rooms.find("li").length > 0)
+                setRoomActive(rooms.find("li")[0]);
+            });
         });
 
         setRoomActive(roomItem);
@@ -142,8 +156,6 @@ $("#name-dialog").dialog({
   ]
 });
 
-
-        
 roomInput.keypress(function(event) {
   if (event.keyCode === 13 && roomInput.val() != "")
   {

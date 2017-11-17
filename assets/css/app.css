@@ -19,6 +19,15 @@
     display: inline-block;
 }
 
+.leave-button {
+    height: 20px;
+    width: 20px;
+    line-height: 16px;
+    text-align: center;
+    float: right;
+    padding: 0px 0px 0px 0px;
+}
+
 #main-panel {
     margin: 0 auto;
     width: 80%;

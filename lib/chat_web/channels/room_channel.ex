@@ -11,6 +11,10 @@ defmodule ChatWeb.RoomChannel do
     send(self(), :after_join)
     {:ok, socket}
   end
+  
+  def terminate(_reason, socket) do
+    {:ok, socket}
+  end
 
   def handle_info(:after_join, socket) do
     push socket, "presence_state", Presence.list(socket)
