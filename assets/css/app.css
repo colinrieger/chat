@@ -91,12 +91,17 @@
     text-decoration: none;
 }
 
-#rooms li.current {
+#rooms li.active {
     background-color: #2e7da3;
 }
 
-#rooms .current a {
+#rooms .active a {
     color: #fff;
+}
+
+#rooms .pending a {
+    color: red;
+    font-weight: bold;
 }
 
 #members {

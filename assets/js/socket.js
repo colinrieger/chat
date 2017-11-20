@@ -20,8 +20,8 @@ function joinChannel(room)
   let presences = {};
   let roomId = room.slice(room.indexOf(":") + 1);
 
-  let existingRoom = $(`a[href="#${roomId}"]`).parent('li');
-  if (existingRoom.length > 0)
+  let existingRoom = getRoomItem(roomId);
+  if (existingRoom != null)
   {
     setRoomActive(existingRoom);
     return;
@@ -106,10 +106,17 @@ function sendMessage(channel, roomId)
   }
 }
 
+function getRoomItem(roomId)
+{
+  let roomItem = $(`a[href="#${roomId}"]`).parent('li');
+  return roomItem.length > 0 ? roomItem : null;
+}
+
 function setRoomActive(roomItem)
 {
-  $(roomItem).addClass("current");
-  $(roomItem).siblings().removeClass("current");
+  $(roomItem).removeClass("pending");
+  $(roomItem).addClass("active");
+  $(roomItem).siblings().removeClass("active");
   var active = $(roomItem).find('a').attr("href");
   $(".room-display").css("display", "none");
   $(`${active}-messages`).show();
@@ -124,6 +131,9 @@ function addMessage(roomId, message, color = "Black")
   messageItem.innerText = `[${new Date().toLocaleTimeString()}] ${message}`;
   messageItem.style.color = color;
   $(`#${roomId}-messages`).append(messageItem);
+
+  if ($(`#${roomId}-messages`).css("display") == "none")
+    $(getRoomItem(roomId)).addClass("pending");
 }
 
 function setMembers(roomId, presences) {
