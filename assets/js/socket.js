@@ -19,6 +19,13 @@ function joinChannel(room)
   let channel = socket.channel(room, {});
   let presences = {};
   let roomId = room.slice(room.indexOf(":") + 1);
+
+  let existingRoom = $(`a[href="#${roomId}"]`).parent('li');
+  if (existingRoom.length > 0)
+  {
+    setRoomActive(existingRoom);
+    return;
+  }
   
   channel.on("message", payload => {
     addMessage(roomId, `${payload.user_id}: ${payload.body}`);
@@ -79,8 +86,9 @@ function joinChannel(room)
               $(`#${roomId}-members`).remove();
               $(`#${roomId}-message-input`).remove();
               $(`#${roomId}-send-button`).remove();
-              if (rooms.find("li").length > 0)
-                setRoomActive(rooms.find("li")[0]);
+              let existingRooms = rooms.find("li");
+              if (existingRooms.length > 0)
+                setRoomActive(existingRooms[existingRooms.length - 1]);
             });
         });
 
@@ -141,7 +149,7 @@ function connectAndJoin()
 }
 
 nameInput.keypress(function(event) {
-  if (event.keyCode === 13)
+  if (event.keyCode == 13)
     connectAndJoin();
 });
 
@@ -156,12 +164,22 @@ $("#name-dialog").dialog({
   ]
 });
 
-roomInput.keypress(function(event) {
-  if (event.keyCode === 13 && roomInput.val() != "")
+roomInput.keydown(function(event) {
+  let key = event.keyCode;
+
+  if ((key >= 48 && key <= 90) || // a-z, 0-9
+      (key >= 96 && key <= 105) || // num 0-9
+      (key == 8)) // backspace
+    return true;
+
+  if (key == 13 && // enter
+      roomInput.val() != "")
   {
     joinChannel("room:" + roomInput.val());
     roomInput.val("");
   }
+
+  return false;
 });
 
 $(`#join-button`).click(function() {
