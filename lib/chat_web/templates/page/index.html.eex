@@ -3,7 +3,7 @@
     <h4>Rooms</h4>
     <div id="rooms"></div>
     <div>
-      <input id="room-input" type="text" class="text-input" placeholder="Channel name"></input><input id="join-button" type="button" class="button-input" value="Join">
+      <input id="room-input" type="text" class="text-input" placeholder="Room name"></input><input id="join-button" type="button" class="button-input" value="Join">
     </div>
   </div><div id="center-panel">
     <h4>Chat</h4>
