@@ -2,7 +2,7 @@
   <div id="left-panel">
     <h4>Rooms</h4>
     <div id="rooms"></div>
-    <div>
+    <div id="room-inputs">
       <input id="room-input" type="text" class="text-input" placeholder="Room name"></input><input id="join-button" type="button" class="button-input" value="Join">
     </div>
   </div><div id="center-panel">
@@ -12,6 +12,7 @@
   </div><div id="right-panel">
     <h4>Members</h4>
     <div id="members"></div>
+    <div id="member-inputs"></div>
   </div>
 </div>
 <div id="name-dialog" title="Name">

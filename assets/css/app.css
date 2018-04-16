@@ -8,7 +8,7 @@
 
 .text-input {
     height: 30px;
-    width: calc(100% - 54px);
+    width: calc(100% - 54px); /* minus .button-input width/margin */
     display: inline-block;
 }
 
@@ -25,13 +25,13 @@
     line-height: 16px;
     text-align: center;
     float: right;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
 }
 
 #main-panel {
     margin: 0 auto;
     width: 80%;
-    height: 800px;
+    height: 100vh;
 }
 
 #left-panel {
@@ -58,10 +58,15 @@
     vertical-align: top;
 }
 
-#messages {
-    height: calc(100% - 34px);
-    border: 1px solid black;
+#message-inputs, #room-inputs, #member-inputs {
+    height: 30px;
+    margin-top: 4px;
     margin-bottom: 4px;
+}
+
+#messages, #rooms, #members {
+    height: calc(100% - 39px - 38px); /* minus header height/margin, minus #_____-inputs height/margin */
+    border: 1px solid black;
     overflow-x: hidden;
     overflow-y: auto;
     list-style: none;
@@ -70,15 +75,6 @@
 #messages li {
     padding: 5px;
     border-bottom: 1px solid #ccc;
-}
-
-#rooms {
-    height: calc(100% - 34px);
-    border: 1px solid black;
-    margin-bottom: 4px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    list-style: none;
 }
 
 #rooms li {
@@ -102,15 +98,6 @@
 #rooms .pending a {
     color: red;
     font-weight: bold;
-}
-
-#members {
-    height: calc(100% - 34px);
-    border: 1px solid black;
-    margin-bottom: 4px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    list-style: none;
 }
 
 #members li {
