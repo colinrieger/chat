@@ -31,7 +31,7 @@
 #main-panel {
     margin: 0 auto;
     width: 80%;
-    height: 100vh;
+    height: 95vh;
 }
 
 #left-panel {
@@ -61,11 +61,10 @@
 #message-inputs, #room-inputs, #member-inputs {
     height: 30px;
     margin-top: 4px;
-    margin-bottom: 4px;
 }
 
 #messages, #rooms, #members {
-    height: calc(100% - 39px - 38px); /* minus header height/margin, minus #_____-inputs height/margin */
+    height: calc(100% - 39px - 34px); /* minus header height/margin, minus #_____-inputs height/margin */
     border: 1px solid black;
     overflow-x: hidden;
     overflow-y: auto;
