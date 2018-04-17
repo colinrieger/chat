@@ -130,7 +130,10 @@ function addMessage(roomId, message, color = "Black")
   let messageItem = document.createElement("li");
   messageItem.innerText = `[${new Date().toLocaleTimeString()}] ${message}`;
   messageItem.style.color = color;
+  let scrolledToBottom = (messages.height() == messages[0].scrollHeight - messages.scrollTop()); // check if we are scrolled to the bottom before appending
   $(`#${roomId}-messages`).append(messageItem);
+  if (scrolledToBottom)
+    messages.scrollTop(messages[0].scrollHeight); // maintain bottom scroll
 
   if ($(`#${roomId}-messages`).css("display") == "none")
     $(getRoomItem(roomId)).addClass("pending");
