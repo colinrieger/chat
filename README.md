@@ -1,2 +1,2 @@
 # Chat app created with Phoenix/Elixir
-Demo: [`http://chat.colinrieger.com/`](http://chat.colinrieger.com/)
+Demo: [`https://chat.colinrieger.com/`](https://chat.colinrieger.com/)
