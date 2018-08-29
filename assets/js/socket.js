@@ -123,6 +123,7 @@ function setRoomActive(roomItem)
   $(`${active}-members`).show();
   $(`${active}-message-input`).show();
   $(`${active}-send-button`).show();
+  $(`${active}-message-input`).focus();
 }
 
 function addMessage(roomId, message, color = "Black")
